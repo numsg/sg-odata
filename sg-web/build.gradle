@@ -1,0 +1,28 @@
+group 'com.sg'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin:"war"
+
+
+apply plugin: 'org.springframework.boot'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile project(":sg-entity")
+    compile project(":sg-odata-service")
+}
+
+//bootRun {
+//    jvmArgs = ['-Xdebug', '-Xrunjdwp:server=y,transport=dt_socket,address=8000,suspend=n','-Dspring.profiles.active=dev']
+//}
+
+//run {
+//    jvmArgs = ['-Xdebug', '-Xrunjdwp:server=y,transport=dt_socket,address=4000,suspend=n','-Dspring.profiles.active=dev']
+//}
